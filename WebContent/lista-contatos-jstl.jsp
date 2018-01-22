@@ -12,8 +12,6 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-	<!--    Criando o DAO -->
-	<jsp:useBean id="dao" class="br.com.caelum.modelo.dao.ContatoDao"/>
 	<c:import url="cabecalho.jsp" />
     <body>
         <table border="0">
@@ -22,6 +20,7 @@
 	        		<th>E-MAIL</th>
 	        		<th>ENDEREÇO</th>
 	        		<th>DATA NASCIMENTO</th>
+	        		<th>AÇÃO</th>
         		</thead>
         		<tbody>
 			<!--Percorre todos os elementos da lista -->
@@ -41,6 +40,9 @@
                     <td>${ contato.endereco }</td>
                     <td>
                     		<fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" />
+        				</td>
+        				<td>
+                    		<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
         				</td>
                 </tr>
 			</c:forEach>

@@ -60,6 +60,7 @@ public class ContatoDao {
 			while(r.next()) {
 				//Instanciando e populando novo objeto.
 				Contato c = new Contato();
+				c.setId(r.getLong("id"));
 				c.setNome(r.getString("nome"));
 				c.setEmail(r.getString("email"));
 				c.setEndereco(r.getString("endereco"));
@@ -155,4 +156,5 @@ public class ContatoDao {
 			throw new RuntimeException(e);
 		}
 	}
+
 }
