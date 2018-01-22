@@ -1,0 +1,11 @@
+* {font-family: Helvetica; margin:0; padding:0;}
+.title {
+	color: #334455;
+}
+.subtitle {
+	color: #667788;
+}
+td {
+	margin: 0px;
+	padding: 10px;
+}
